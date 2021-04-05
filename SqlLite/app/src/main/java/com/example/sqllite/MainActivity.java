@@ -26,21 +26,36 @@ public class MainActivity extends AppCompatActivity {
 
 
         addButton=findViewById(R.id.addButton);
-        addButton=findViewById(R.id.viewRecord);
+        viewButton=findViewById(R.id.viewRecord);
+        editName=findViewById(R.id.editPersonName);
+        editAge= findViewById(R.id.editPersonAge);
+        isActive= findViewById(R.id.switch1);
 
-        addButton.setOnClickListener(new View.OnClickListener() {
+
+        addButton.setOnClickListener( new View.OnClickListener() {
+            Customer customerModal;
+
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Add Button Clicked", Toast.LENGTH_SHORT);
+                ////Shows Message
+                //Toast.makeText(MainActivity.this, "Add Record Clicked", Toast.LENGTH_SHORT).show();
+
+
+                customerModal = new  Customer(editName.getText().toString(),Integer.parseInt(editAge.getText().toString()),isActive.isChecked(),1);
+                Toast.makeText(MainActivity.this, customerModal.toString(), Toast.LENGTH_LONG).show();
+
             }
         });
 
         viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Add Button Clicked", Toast.LENGTH_SHORT);
+                Toast.makeText(MainActivity.this, "View Record Clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
+
+
     }
+
 }
