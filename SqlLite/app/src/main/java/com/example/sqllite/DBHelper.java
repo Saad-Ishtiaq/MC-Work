@@ -1,10 +1,15 @@
 package com.example.sqllite;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabaseLockedException;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
     public static final String CUSTOMER_NAME = "CustomerName";
@@ -41,5 +46,44 @@ public class DBHelper extends SQLiteOpenHelper {
         if (insert == -1) { return false; }
         else{return true;}
     }
+
+    public List<Customer> getAllRecords(){
+        List<Customer> myList= new ArrayList<>();
+        String query="SELECT * FROM " + CUST_TABLE;
+        SQLiteDatabase DB=this.getReadableDatabase();
+
+        Cursor cursor= DB.rawQuery(query,null);
+
+
+        if(cursor.moveToFirst()){
+            do{
+                String cusName=cursor.getString(1);
+                int cusAge=cursor.getInt(2);
+                Boolean isActive=cursor.getInt(3)==1 ? true : false;
+                int cusID=cursor.getInt(0);
+
+                Customer customer= new Customer(cusName,cusAge,isActive,cusID);
+
+                myList.add(customer);
+
+            }while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        DB.close();
+        return  myList;
+    }
+
+
+
+
+    public void deleteCustomer(String deleteID)
+    {
+        SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
+        sqLiteDatabase.delete(CUST_TABLE,CUSTOMER_ID+"=?",new String[]{String.valueOf(deleteID)});
+        sqLiteDatabase.close();
+
+    }
+
 }
 
