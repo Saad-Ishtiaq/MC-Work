@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<Customer> arrayAdapter;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
