@@ -18,15 +18,15 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String CUSTOMER_ID = "CustomerID";
     public static final String CUST_TABLE = "CustTable";
 
-    public DBHelper(@Nullable Context context) {
-        super(context, "MyDB.db", null, 1);
-    }
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         //String createTableStatementOne = "CREATE TABLE CustTable(CustomerID Integer PRIMARY KEY AUTOINCREMENT, " + CUSTOMER_NAME_FIRST + " Text, CustomerAge Int, ActiveCustomer BOOL) ";
         String createTableStatement = "CREATE TABLE " + CUST_TABLE + "(" + CUSTOMER_ID + " Integer PRIMARY KEY AUTOINCREMENT, " + CUSTOMER_NAME + " Text, " + CUSTOMER_AGE + " Int, " + ACTIVE_CUSTOMER + " BOOL) ";
         db.execSQL(createTableStatement);
+    }
+
+    public DBHelper(@Nullable Context context) {
+        super(context, "MyDB.db", null, 1);
     }
 
     @Override
@@ -41,7 +41,8 @@ public class DBHelper extends SQLiteOpenHelper {
         cv.put(CUSTOMER_NAME, customerModel.getName());
         cv.put(CUSTOMER_AGE, customerModel.getAge());
         cv.put(ACTIVE_CUSTOMER, customerModel.isActive());
-        //NullCoumnHack
+
+        //NullColumnHack
         long insert = db.insert(CUST_TABLE, null, cv);
         if (insert == -1) { return false; }
         else{return true;}
@@ -53,7 +54,6 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase DB=this.getReadableDatabase();
 
         Cursor cursor= DB.rawQuery(query,null);
-
 
         if(cursor.moveToFirst()){
             do{
@@ -74,9 +74,6 @@ public class DBHelper extends SQLiteOpenHelper {
         return  myList;
     }
 
-
-
-
     public void deleteCustomer(String deleteID)
     {
         SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
@@ -84,6 +81,5 @@ public class DBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.close();
 
     }
-
 }
 

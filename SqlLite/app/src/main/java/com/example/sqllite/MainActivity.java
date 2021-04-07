@@ -23,13 +23,10 @@ public class MainActivity extends AppCompatActivity {
     ListView listViewPersonDetails;
     ArrayAdapter<Customer> arrayAdapter;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         addButton=findViewById(R.id.addButton);
         viewButton=findViewById(R.id.viewRecord);
@@ -38,21 +35,17 @@ public class MainActivity extends AppCompatActivity {
         isActive= findViewById(R.id.switch1);
         listViewPersonDetails=findViewById(R.id.listViewCustomer);
 
-
         deleteID=findViewById(R.id.editdeleteID);
         deleteButton=findViewById(R.id.deleteButton);
 
         RefreshData();
 
-
         addButton.setOnClickListener( new View.OnClickListener() {
             Customer customerModel;
-
             @Override
             public void onClick(View v) {
                 ////Shows Message
                 //Toast.makeText(MainActivity.this, "Add Record Clicked", Toast.LENGTH_SHORT).show();
-
 //
 //                customerModel = new  Customer(editName.getText().toString(),Integer.parseInt(editAge.getText().toString()),isActive.isChecked(),1);
 //                Toast.makeText(MainActivity.this, customerModel.toString(), Toast.LENGTH_LONG).show();
@@ -61,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
                     customerModel = new Customer(editName.getText().toString(), Integer.parseInt(editAge.getText().toString()), isActive.isChecked(), 1);
                     //Toast.makeText(MainActivity.this, customerModel.toString(), Toast.LENGTH_SHORT).show();
                     Toast.makeText(MainActivity.this, "Add Record Clicked", Toast.LENGTH_SHORT).show();
-
                     RefreshData();
                 }
                 catch (Exception e){
@@ -69,22 +61,16 @@ public class MainActivity extends AppCompatActivity {
                 }
                 DBHelper dbHelper = new DBHelper(MainActivity.this);
                 boolean b = dbHelper.addCustomer(customerModel);
-
-
             }
         });
 
         viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Toast.makeText(MainActivity.this, "View Record Clicked" , Toast.LENGTH_LONG).show();
                 RefreshData();
             }
         });
-
-
-
     }
 
     private void RefreshData() {
@@ -95,10 +81,11 @@ public class MainActivity extends AppCompatActivity {
         listViewPersonDetails.setAdapter(arrayAdapter);
     }
 
-
     public void Delete(View view) {
 
         DBHelper dbHelper= new DBHelper(MainActivity.this);
         dbHelper.deleteCustomer(deleteID.getText().toString());
+        deleteID.setText("");
+        RefreshData();
     }
 }

@@ -87,25 +87,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:onClick="Delete"
-
         android:layout_marginEnd="28dp"
-        android:layout_marginBottom="8dp"
+
+        android:layout_marginBottom="268dp"
+        android:onClick="Delete"
         android:text="Delete"
         app:backgroundTint="#DC3E3E"
-        app:layout_constraintBottom_toTopOf="@+id/listViewCustomer"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/editdeleteID"
         android:layout_width="107dp"
         android:layout_height="41dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="268dp"
         android:ems="10"
         android:hint="DeleteID"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/listViewCustomer"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/deleteButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
