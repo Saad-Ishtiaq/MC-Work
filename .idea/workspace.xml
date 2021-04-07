@@ -34,19 +34,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="987906be-f6b8-4249-94fb-1d3e36dfeb7a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SqlLite/app/src/main/java/com/example/sqllite/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/SqlLite/app/src/main/java/com/example/sqllite/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SqlLite/app/src/main/java/com/example/sqllite/DBHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/SqlLite/app/src/main/java/com/example/sqllite/DBHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SqlLite/app/src/main/java/com/example/sqllite/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/SqlLite/app/src/main/java/com/example/sqllite/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SqlLite/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SqlLite/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-    </list>
+    <list default="true" id="987906be-f6b8-4249-94fb-1d3e36dfeb7a" name="Default Changelist" comment="Navigation Bar" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,6 +60,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SqlLite" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunManager">
@@ -151,6 +140,14 @@
       <option name="presentableId" value="Default" />
       <updated>1617834183887</updated>
     </task>
+    <task id="LOCAL-00001" summary="Navigation Bar">
+      <created>1617835517852</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617835517853</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,5 +160,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Navigation Bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Navigation Bar" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1617835558371">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1617835558371" />
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2" timestamp="1617835518194">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="275" y="102" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1617835518194" />
   </component>
 </project>
